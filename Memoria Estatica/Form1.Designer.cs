@@ -1,4 +1,4 @@
-﻿namespace Memoria_Estatica
+namespace Memoria_Estatica
 {
     partial class Form1
     {
@@ -55,30 +55,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tlpPrincipal = new TableLayoutPanel();
-            gbStaticMemory = new GroupBox();
-            tlpStatic = new TableLayoutPanel();
-            lblInitialSize = new Label();
-            nudStaticSize = new NumericUpDown();
-            btnGenerateVector = new Button();
-            lblNewSize = new Label();
-            nudNewSize = new NumericUpDown();
-            btnResizeVector = new Button();
-            lblStaticInfo = new Label();
-            lstVectorEstatico = new ListBox();
-            gbDynamicMemory = new GroupBox();
-            tlpDynamic = new TableLayoutPanel();
-            lblObjectCount = new Label();
-            nudDynamicCount = new NumericUpDown();
-            btnCreateInstances = new Button();
-            btnAddInstance = new Button();
-            btnTestReference = new Button();
-            btnReleaseAll = new Button();
-            lblDynamicInfo = new Label();
-            lstObjetosHeap = new ListBox();
-            tlpBenchmark = new TableLayoutPanel();
-            btnRunBenchmark = new Button();
-            lblBenchmarkStatus = new Label();
+            tlpPrincipal = new System.Windows.Forms.TableLayoutPanel();
+            gbStaticMemory = new System.Windows.Forms.GroupBox();
+            tlpStatic = new System.Windows.Forms.TableLayoutPanel();
+            lblInitialSize = new System.Windows.Forms.Label();
+            nudStaticSize = new System.Windows.Forms.NumericUpDown();
+            btnGenerateVector = new System.Windows.Forms.Button();
+            lblNewSize = new System.Windows.Forms.Label();
+            nudNewSize = new System.Windows.Forms.NumericUpDown();
+            btnResizeVector = new System.Windows.Forms.Button();
+            lblStaticInfo = new System.Windows.Forms.Label();
+            lstVectorEstatico = new System.Windows.Forms.ListBox();
+            gbDynamicMemory = new System.Windows.Forms.GroupBox();
+            tlpDynamic = new System.Windows.Forms.TableLayoutPanel();
+            lblObjectCount = new System.Windows.Forms.Label();
+            nudDynamicCount = new System.Windows.Forms.NumericUpDown();
+            btnCreateInstances = new System.Windows.Forms.Button();
+            btnAddInstance = new System.Windows.Forms.Button();
+            btnTestReference = new System.Windows.Forms.Button();
+            btnReleaseAll = new System.Windows.Forms.Button();
+            lblDynamicInfo = new System.Windows.Forms.Label();
+            lstObjetosHeap = new System.Windows.Forms.ListBox();
+            tlpBenchmark = new System.Windows.Forms.TableLayoutPanel();
+            btnRunBenchmark = new System.Windows.Forms.Button();
+            lblBenchmarkStatus = new System.Windows.Forms.Label();
+
             tlpPrincipal.SuspendLayout();
             gbStaticMemory.SuspendLayout();
             tlpStatic.SuspendLayout();
@@ -89,45 +90,46 @@
             ((System.ComponentModel.ISupportInitialize)nudDynamicCount).BeginInit();
             tlpBenchmark.SuspendLayout();
             SuspendLayout();
+
             // 
             // tlpPrincipal
             // 
             tlpPrincipal.ColumnCount = 2;
-            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tlpPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             tlpPrincipal.Controls.Add(gbStaticMemory, 0, 0);
             tlpPrincipal.Controls.Add(gbDynamicMemory, 1, 0);
             tlpPrincipal.Controls.Add(tlpBenchmark, 0, 1);
-            tlpPrincipal.Dock = DockStyle.Fill;
-            tlpPrincipal.Location = new Point(0, 0);
-            tlpPrincipal.Margin = new Padding(3, 4, 3, 4);
+            tlpPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlpPrincipal.Location = new System.Drawing.Point(0, 0);
             tlpPrincipal.Name = "tlpPrincipal";
-            tlpPrincipal.Padding = new Padding(11, 13, 11, 13);
+            tlpPrincipal.Padding = new System.Windows.Forms.Padding(16);
             tlpPrincipal.RowCount = 2;
-            tlpPrincipal.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpPrincipal.RowStyles.Add(new RowStyle());
-            tlpPrincipal.Size = new Size(1120, 827);
+            tlpPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlpPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+            tlpPrincipal.Size = new System.Drawing.Size(1280, 720);
             tlpPrincipal.TabIndex = 0;
+
             // 
             // gbStaticMemory
             // 
             gbStaticMemory.Controls.Add(tlpStatic);
-            gbStaticMemory.Dock = DockStyle.Fill;
-            gbStaticMemory.Location = new Point(14, 17);
-            gbStaticMemory.Margin = new Padding(3, 4, 3, 4);
+            gbStaticMemory.Dock = System.Windows.Forms.DockStyle.Fill;
+            gbStaticMemory.Location = new System.Drawing.Point(19, 19);
             gbStaticMemory.Name = "gbStaticMemory";
-            gbStaticMemory.Padding = new Padding(3, 4, 3, 4);
-            gbStaticMemory.Size = new Size(543, 732);
+            gbStaticMemory.Padding = new System.Windows.Forms.Padding(8);
+            gbStaticMemory.Size = new System.Drawing.Size(615, 622);
             gbStaticMemory.TabIndex = 0;
             gbStaticMemory.TabStop = false;
             gbStaticMemory.Text = "Static Memory - Vectors and Resizing";
+
             // 
             // tlpStatic
             // 
             tlpStatic.ColumnCount = 3;
-            tlpStatic.ColumnStyles.Add(new ColumnStyle());
-            tlpStatic.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpStatic.ColumnStyles.Add(new ColumnStyle());
+            tlpStatic.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
+            tlpStatic.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlpStatic.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
             tlpStatic.Controls.Add(lblInitialSize, 0, 0);
             tlpStatic.Controls.Add(nudStaticSize, 1, 0);
             tlpStatic.Controls.Add(btnGenerateVector, 2, 0);
@@ -136,135 +138,150 @@
             tlpStatic.Controls.Add(btnResizeVector, 2, 1);
             tlpStatic.Controls.Add(lblStaticInfo, 0, 2);
             tlpStatic.Controls.Add(lstVectorEstatico, 0, 3);
-            tlpStatic.Dock = DockStyle.Fill;
-            tlpStatic.Location = new Point(3, 24);
-            tlpStatic.Margin = new Padding(3, 4, 3, 4);
+            tlpStatic.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlpStatic.Location = new System.Drawing.Point(8, 28);
             tlpStatic.Name = "tlpStatic";
-            tlpStatic.Padding = new Padding(7, 8, 7, 8);
+            tlpStatic.Padding = new System.Windows.Forms.Padding(8);
             tlpStatic.RowCount = 4;
-            tlpStatic.RowStyles.Add(new RowStyle());
-            tlpStatic.RowStyles.Add(new RowStyle());
-            tlpStatic.RowStyles.Add(new RowStyle());
-            tlpStatic.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpStatic.Size = new Size(537, 704);
+            tlpStatic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+            tlpStatic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+            tlpStatic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+            tlpStatic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlpStatic.Size = new System.Drawing.Size(599, 586);
             tlpStatic.TabIndex = 0;
+
             // 
             // lblInitialSize
             // 
-            lblInitialSize.Anchor = AnchorStyles.Left;
+            lblInitialSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
             lblInitialSize.AutoSize = true;
-            lblInitialSize.Location = new Point(10, 22);
+            lblInitialSize.Location = new System.Drawing.Point(12, 18);
+            lblInitialSize.Margin = new System.Windows.Forms.Padding(4, 0, 8, 0);
             lblInitialSize.Name = "lblInitialSize";
-            lblInitialSize.Size = new Size(78, 20);
+            lblInitialSize.Size = new System.Drawing.Size(84, 21);
             lblInitialSize.TabIndex = 0;
             lblInitialSize.Text = "Initial size:";
+
             // 
             // nudStaticSize
             // 
-            nudStaticSize.Dock = DockStyle.Fill;
-            nudStaticSize.Location = new Point(94, 12);
-            nudStaticSize.Margin = new Padding(3, 4, 3, 4);
+            nudStaticSize.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            nudStaticSize.Location = new System.Drawing.Point(108, 13);
+            nudStaticSize.Margin = new System.Windows.Forms.Padding(4, 6, 8, 6);
             nudStaticSize.Maximum = new decimal(new int[] { 5000000, 0, 0, 0 });
             nudStaticSize.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudStaticSize.Name = "nudStaticSize";
-            nudStaticSize.Size = new Size(284, 27);
+            nudStaticSize.Size = new System.Drawing.Size(305, 29);
             nudStaticSize.TabIndex = 1;
             nudStaticSize.ThousandsSeparator = true;
             nudStaticSize.Value = new decimal(new int[] { 10, 0, 0, 0 });
+
             // 
             // btnGenerateVector
             // 
             btnGenerateVector.AutoSize = true;
-            btnGenerateVector.Dock = DockStyle.Fill;
-            btnGenerateVector.Location = new Point(384, 12);
-            btnGenerateVector.Margin = new Padding(3, 4, 3, 4);
+            btnGenerateVector.Dock = System.Windows.Forms.DockStyle.Fill;
+            btnGenerateVector.Location = new System.Drawing.Point(425, 12);
+            btnGenerateVector.Margin = new System.Windows.Forms.Padding(4);
+            btnGenerateVector.MinimumSize = new System.Drawing.Size(155, 38);
             btnGenerateVector.Name = "btnGenerateVector";
-            btnGenerateVector.Size = new Size(143, 40);
+            btnGenerateVector.Padding = new System.Windows.Forms.Padding(12, 4, 12, 4);
+            btnGenerateVector.Size = new System.Drawing.Size(162, 38);
             btnGenerateVector.TabIndex = 2;
             btnGenerateVector.Text = "Generate Vector";
             btnGenerateVector.UseVisualStyleBackColor = true;
             btnGenerateVector.Click += btnGenerateVector_Click;
+
             // 
             // lblNewSize
             // 
-            lblNewSize.Anchor = AnchorStyles.Left;
+            lblNewSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
             lblNewSize.AutoSize = true;
-            lblNewSize.Location = new Point(10, 70);
+            lblNewSize.Location = new System.Drawing.Point(12, 64);
+            lblNewSize.Margin = new System.Windows.Forms.Padding(4, 0, 8, 0);
             lblNewSize.Name = "lblNewSize";
-            lblNewSize.Size = new Size(71, 20);
+            lblNewSize.Size = new System.Drawing.Size(74, 21);
             lblNewSize.TabIndex = 3;
             lblNewSize.Text = "New size:";
+
             // 
             // nudNewSize
             // 
-            nudNewSize.Dock = DockStyle.Fill;
-            nudNewSize.Location = new Point(94, 60);
-            nudNewSize.Margin = new Padding(3, 4, 3, 4);
+            nudNewSize.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            nudNewSize.Location = new System.Drawing.Point(108, 59);
+            nudNewSize.Margin = new System.Windows.Forms.Padding(4, 6, 8, 6);
             nudNewSize.Maximum = new decimal(new int[] { 5000000, 0, 0, 0 });
             nudNewSize.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudNewSize.Name = "nudNewSize";
-            nudNewSize.Size = new Size(284, 27);
+            nudNewSize.Size = new System.Drawing.Size(305, 29);
             nudNewSize.TabIndex = 4;
             nudNewSize.ThousandsSeparator = true;
             nudNewSize.Value = new decimal(new int[] { 20, 0, 0, 0 });
+
             // 
             // btnResizeVector
             // 
             btnResizeVector.AutoSize = true;
-            btnResizeVector.Dock = DockStyle.Fill;
-            btnResizeVector.Location = new Point(384, 60);
-            btnResizeVector.Margin = new Padding(3, 4, 3, 4);
+            btnResizeVector.Dock = System.Windows.Forms.DockStyle.Fill;
+            btnResizeVector.Location = new System.Drawing.Point(425, 58);
+            btnResizeVector.Margin = new System.Windows.Forms.Padding(4);
+            btnResizeVector.MinimumSize = new System.Drawing.Size(155, 38);
             btnResizeVector.Name = "btnResizeVector";
-            btnResizeVector.Size = new Size(143, 40);
+            btnResizeVector.Padding = new System.Windows.Forms.Padding(12, 4, 12, 4);
+            btnResizeVector.Size = new System.Drawing.Size(162, 38);
             btnResizeVector.TabIndex = 5;
             btnResizeVector.Text = "Resize";
             btnResizeVector.UseVisualStyleBackColor = true;
             btnResizeVector.Click += btnResizeVector_Click;
+
             // 
             // lblStaticInfo
             // 
             lblStaticInfo.AutoSize = true;
             tlpStatic.SetColumnSpan(lblStaticInfo, 3);
-            lblStaticInfo.Dock = DockStyle.Fill;
-            lblStaticInfo.Location = new Point(10, 109);
-            lblStaticInfo.Margin = new Padding(3, 5, 3, 5);
+            lblStaticInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblStaticInfo.Location = new System.Drawing.Point(12, 106);
+            lblStaticInfo.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             lblStaticInfo.Name = "lblStaticInfo";
-            lblStaticInfo.Size = new Size(517, 20);
+            lblStaticInfo.Size = new System.Drawing.Size(575, 21);
             lblStaticInfo.TabIndex = 6;
             lblStaticInfo.Text = "Status: No vector generated.";
+
             // 
             // lstVectorEstatico
             // 
             tlpStatic.SetColumnSpan(lstVectorEstatico, 3);
-            lstVectorEstatico.Dock = DockStyle.Fill;
+            lstVectorEstatico.Dock = System.Windows.Forms.DockStyle.Fill;
             lstVectorEstatico.FormattingEnabled = true;
             lstVectorEstatico.IntegralHeight = false;
-            lstVectorEstatico.Location = new Point(10, 138);
-            lstVectorEstatico.Margin = new Padding(3, 4, 3, 4);
+            lstVectorEstatico.ItemHeight = 21;
+            lstVectorEstatico.Location = new System.Drawing.Point(12, 139);
+            lstVectorEstatico.Margin = new System.Windows.Forms.Padding(4);
             lstVectorEstatico.Name = "lstVectorEstatico";
-            lstVectorEstatico.Size = new Size(517, 554);
+            lstVectorEstatico.Size = new System.Drawing.Size(575, 435);
             lstVectorEstatico.TabIndex = 7;
+
             // 
             // gbDynamicMemory
             // 
             gbDynamicMemory.Controls.Add(tlpDynamic);
-            gbDynamicMemory.Dock = DockStyle.Fill;
-            gbDynamicMemory.Location = new Point(563, 17);
-            gbDynamicMemory.Margin = new Padding(3, 4, 3, 4);
+            gbDynamicMemory.Dock = System.Windows.Forms.DockStyle.Fill;
+            gbDynamicMemory.Location = new System.Drawing.Point(646, 19);
             gbDynamicMemory.Name = "gbDynamicMemory";
-            gbDynamicMemory.Padding = new Padding(3, 4, 3, 4);
-            gbDynamicMemory.Size = new Size(543, 732);
+            gbDynamicMemory.Padding = new System.Windows.Forms.Padding(8);
+            gbDynamicMemory.Size = new System.Drawing.Size(615, 622);
             gbDynamicMemory.TabIndex = 1;
             gbDynamicMemory.TabStop = false;
             gbDynamicMemory.Text = "Dynamic Memory - Heap Instances";
+
             // 
             // tlpDynamic
             // 
             tlpDynamic.ColumnCount = 4;
-            tlpDynamic.ColumnStyles.Add(new ColumnStyle());
-            tlpDynamic.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpDynamic.ColumnStyles.Add(new ColumnStyle());
-            tlpDynamic.ColumnStyles.Add(new ColumnStyle());
+            tlpDynamic.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
+            tlpDynamic.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlpDynamic.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
+            tlpDynamic.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
             tlpDynamic.Controls.Add(lblObjectCount, 0, 0);
             tlpDynamic.Controls.Add(nudDynamicCount, 1, 0);
             tlpDynamic.Controls.Add(btnCreateInstances, 2, 0);
@@ -273,172 +290,195 @@
             tlpDynamic.Controls.Add(btnReleaseAll, 2, 1);
             tlpDynamic.Controls.Add(lblDynamicInfo, 0, 2);
             tlpDynamic.Controls.Add(lstObjetosHeap, 0, 3);
-            tlpDynamic.Dock = DockStyle.Fill;
-            tlpDynamic.Location = new Point(3, 24);
-            tlpDynamic.Margin = new Padding(3, 4, 3, 4);
+            tlpDynamic.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlpDynamic.Location = new System.Drawing.Point(8, 28);
             tlpDynamic.Name = "tlpDynamic";
-            tlpDynamic.Padding = new Padding(7, 8, 7, 8);
+            tlpDynamic.Padding = new System.Windows.Forms.Padding(8);
             tlpDynamic.RowCount = 4;
-            tlpDynamic.RowStyles.Add(new RowStyle());
-            tlpDynamic.RowStyles.Add(new RowStyle());
-            tlpDynamic.RowStyles.Add(new RowStyle());
-            tlpDynamic.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpDynamic.Size = new Size(537, 704);
+            tlpDynamic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+            tlpDynamic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+            tlpDynamic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+            tlpDynamic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlpDynamic.Size = new System.Drawing.Size(599, 586);
             tlpDynamic.TabIndex = 0;
+
             // 
             // lblObjectCount
             // 
-            lblObjectCount.Anchor = AnchorStyles.Left;
+            lblObjectCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
             lblObjectCount.AutoSize = true;
-            lblObjectCount.Location = new Point(10, 22);
+            lblObjectCount.Location = new System.Drawing.Point(12, 18);
+            lblObjectCount.Margin = new System.Windows.Forms.Padding(4, 0, 8, 0);
             lblObjectCount.Name = "lblObjectCount";
-            lblObjectCount.Size = new Size(51, 20);
+            lblObjectCount.Size = new System.Drawing.Size(55, 21);
             lblObjectCount.TabIndex = 0;
             lblObjectCount.Text = "Count:";
+
             // 
             // nudDynamicCount
             // 
-            nudDynamicCount.Dock = DockStyle.Fill;
-            nudDynamicCount.Location = new Point(67, 12);
-            nudDynamicCount.Margin = new Padding(3, 4, 3, 4);
+            nudDynamicCount.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            nudDynamicCount.Location = new System.Drawing.Point(79, 13);
+            nudDynamicCount.Margin = new System.Windows.Forms.Padding(4, 6, 8, 6);
             nudDynamicCount.Maximum = new decimal(new int[] { 500000, 0, 0, 0 });
             nudDynamicCount.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudDynamicCount.Name = "nudDynamicCount";
-            nudDynamicCount.Size = new Size(223, 27);
+            nudDynamicCount.Size = new System.Drawing.Size(218, 29);
             nudDynamicCount.TabIndex = 1;
             nudDynamicCount.ThousandsSeparator = true;
             nudDynamicCount.Value = new decimal(new int[] { 10, 0, 0, 0 });
+
             // 
             // btnCreateInstances
             // 
             btnCreateInstances.AutoSize = true;
-            btnCreateInstances.Dock = DockStyle.Fill;
-            btnCreateInstances.Location = new Point(296, 12);
-            btnCreateInstances.Margin = new Padding(3, 4, 3, 4);
+            btnCreateInstances.Dock = System.Windows.Forms.DockStyle.Fill;
+            btnCreateInstances.Location = new System.Drawing.Point(309, 12);
+            btnCreateInstances.Margin = new System.Windows.Forms.Padding(4);
+            btnCreateInstances.MinimumSize = new System.Drawing.Size(155, 38);
             btnCreateInstances.Name = "btnCreateInstances";
-            btnCreateInstances.Size = new Size(144, 40);
+            btnCreateInstances.Padding = new System.Windows.Forms.Padding(12, 4, 12, 4);
+            btnCreateInstances.Size = new System.Drawing.Size(166, 38);
             btnCreateInstances.TabIndex = 2;
             btnCreateInstances.Text = "Create Instances";
             btnCreateInstances.UseVisualStyleBackColor = true;
             btnCreateInstances.Click += btnCreateInstances_Click;
+
             // 
             // btnAddInstance
             // 
             btnAddInstance.AutoSize = true;
-            btnAddInstance.Dock = DockStyle.Fill;
-            btnAddInstance.Location = new Point(446, 12);
-            btnAddInstance.Margin = new Padding(3, 4, 3, 4);
+            btnAddInstance.Dock = System.Windows.Forms.DockStyle.Fill;
+            btnAddInstance.Location = new System.Drawing.Point(483, 12);
+            btnAddInstance.Margin = new System.Windows.Forms.Padding(4);
+            btnAddInstance.MinimumSize = new System.Drawing.Size(96, 38);
             btnAddInstance.Name = "btnAddInstance";
-            btnAddInstance.Size = new Size(81, 40);
+            btnAddInstance.Padding = new System.Windows.Forms.Padding(12, 4, 12, 4);
+            btnAddInstance.Size = new System.Drawing.Size(104, 38);
             btnAddInstance.TabIndex = 3;
             btnAddInstance.Text = "Add +1";
             btnAddInstance.UseVisualStyleBackColor = true;
             btnAddInstance.Click += btnAddInstance_Click;
+
             // 
             // btnTestReference
             // 
             btnTestReference.AutoSize = true;
             tlpDynamic.SetColumnSpan(btnTestReference, 2);
-            btnTestReference.Dock = DockStyle.Fill;
-            btnTestReference.Location = new Point(10, 60);
-            btnTestReference.Margin = new Padding(3, 4, 3, 4);
+            btnTestReference.Dock = System.Windows.Forms.DockStyle.Fill;
+            btnTestReference.Location = new System.Drawing.Point(12, 58);
+            btnTestReference.Margin = new System.Windows.Forms.Padding(4);
+            btnTestReference.MinimumSize = new System.Drawing.Size(180, 38);
             btnTestReference.Name = "btnTestReference";
-            btnTestReference.Size = new Size(280, 40);
+            btnTestReference.Padding = new System.Windows.Forms.Padding(12, 4, 12, 4);
+            btnTestReference.Size = new System.Drawing.Size(289, 38);
             btnTestReference.TabIndex = 4;
             btnTestReference.Text = "Test Heap Reference";
             btnTestReference.UseVisualStyleBackColor = true;
             btnTestReference.Click += btnTestReference_Click;
+
             // 
             // btnReleaseAll
             // 
             btnReleaseAll.AutoSize = true;
             tlpDynamic.SetColumnSpan(btnReleaseAll, 2);
-            btnReleaseAll.Dock = DockStyle.Fill;
-            btnReleaseAll.Location = new Point(296, 60);
-            btnReleaseAll.Margin = new Padding(3, 4, 3, 4);
+            btnReleaseAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            btnReleaseAll.Location = new System.Drawing.Point(309, 58);
+            btnReleaseAll.Margin = new System.Windows.Forms.Padding(4);
+            btnReleaseAll.MinimumSize = new System.Drawing.Size(180, 38);
             btnReleaseAll.Name = "btnReleaseAll";
-            btnReleaseAll.Size = new Size(231, 40);
+            btnReleaseAll.Padding = new System.Windows.Forms.Padding(12, 4, 12, 4);
+            btnReleaseAll.Size = new System.Drawing.Size(278, 38);
             btnReleaseAll.TabIndex = 5;
             btnReleaseAll.Text = "Release and Run GC";
             btnReleaseAll.UseVisualStyleBackColor = true;
             btnReleaseAll.Click += btnReleaseAll_Click;
+
             // 
             // lblDynamicInfo
             // 
             lblDynamicInfo.AutoSize = true;
             tlpDynamic.SetColumnSpan(lblDynamicInfo, 4);
-            lblDynamicInfo.Dock = DockStyle.Fill;
-            lblDynamicInfo.Location = new Point(10, 109);
-            lblDynamicInfo.Margin = new Padding(3, 5, 3, 5);
+            lblDynamicInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblDynamicInfo.Location = new System.Drawing.Point(12, 106);
+            lblDynamicInfo.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             lblDynamicInfo.Name = "lblDynamicInfo";
-            lblDynamicInfo.Size = new Size(517, 20);
+            lblDynamicInfo.Size = new System.Drawing.Size(575, 21);
             lblDynamicInfo.TabIndex = 6;
             lblDynamicInfo.Text = "Status: No active Heap instances.";
+
             // 
             // lstObjetosHeap
             // 
             tlpDynamic.SetColumnSpan(lstObjetosHeap, 4);
-            lstObjetosHeap.Dock = DockStyle.Fill;
+            lstObjetosHeap.Dock = System.Windows.Forms.DockStyle.Fill;
             lstObjetosHeap.FormattingEnabled = true;
             lstObjetosHeap.IntegralHeight = false;
-            lstObjetosHeap.Location = new Point(10, 138);
-            lstObjetosHeap.Margin = new Padding(3, 4, 3, 4);
+            lstObjetosHeap.ItemHeight = 21;
+            lstObjetosHeap.Location = new System.Drawing.Point(12, 139);
+            lstObjetosHeap.Margin = new System.Windows.Forms.Padding(4);
             lstObjetosHeap.Name = "lstObjetosHeap";
-            lstObjetosHeap.Size = new Size(517, 554);
+            lstObjetosHeap.Size = new System.Drawing.Size(575, 435);
             lstObjetosHeap.TabIndex = 7;
+
             // 
             // tlpBenchmark
             // 
             tlpBenchmark.AutoSize = true;
             tlpBenchmark.ColumnCount = 2;
             tlpPrincipal.SetColumnSpan(tlpBenchmark, 2);
-            tlpBenchmark.ColumnStyles.Add(new ColumnStyle());
-            tlpBenchmark.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpBenchmark.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
+            tlpBenchmark.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tlpBenchmark.Controls.Add(btnRunBenchmark, 0, 0);
             tlpBenchmark.Controls.Add(lblBenchmarkStatus, 1, 0);
-            tlpBenchmark.Dock = DockStyle.Fill;
-            tlpBenchmark.Location = new Point(14, 757);
-            tlpBenchmark.Margin = new Padding(3, 4, 3, 4);
+            tlpBenchmark.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlpBenchmark.Location = new System.Drawing.Point(19, 647);
             tlpBenchmark.Name = "tlpBenchmark";
-            tlpBenchmark.Padding = new Padding(0, 5, 0, 0);
+            tlpBenchmark.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             tlpBenchmark.RowCount = 1;
-            tlpBenchmark.RowStyles.Add(new RowStyle());
-            tlpBenchmark.Size = new Size(1092, 53);
+            tlpBenchmark.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+            tlpBenchmark.Size = new System.Drawing.Size(1242, 54);
             tlpBenchmark.TabIndex = 2;
+
             // 
             // btnRunBenchmark
             // 
             btnRunBenchmark.AutoSize = true;
-            btnRunBenchmark.Location = new Point(3, 9);
-            btnRunBenchmark.Margin = new Padding(3, 4, 3, 4);
+            btnRunBenchmark.Location = new System.Drawing.Point(4, 12);
+            btnRunBenchmark.Margin = new System.Windows.Forms.Padding(4);
+            btnRunBenchmark.MinimumSize = new System.Drawing.Size(290, 42);
             btnRunBenchmark.Name = "btnRunBenchmark";
-            btnRunBenchmark.Size = new Size(278, 40);
+            btnRunBenchmark.Padding = new System.Windows.Forms.Padding(16, 6, 16, 6);
+            btnRunBenchmark.Size = new System.Drawing.Size(290, 42);
             btnRunBenchmark.TabIndex = 0;
             btnRunBenchmark.Text = "Run 100,000-Element Comparison";
             btnRunBenchmark.UseVisualStyleBackColor = true;
             btnRunBenchmark.Click += btnRunBenchmark_Click;
+
             // 
             // lblBenchmarkStatus
             // 
-            lblBenchmarkStatus.Dock = DockStyle.Fill;
-            lblBenchmarkStatus.Location = new Point(287, 5);
+            lblBenchmarkStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblBenchmarkStatus.Location = new System.Drawing.Point(302, 8);
             lblBenchmarkStatus.Name = "lblBenchmarkStatus";
-            lblBenchmarkStatus.Size = new Size(802, 48);
+            lblBenchmarkStatus.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            lblBenchmarkStatus.Size = new System.Drawing.Size(936, 46);
             lblBenchmarkStatus.TabIndex = 1;
             lblBenchmarkStatus.Text = "Ready to run clean 100,000-element comparison.";
-            lblBenchmarkStatus.TextAlign = ContentAlignment.MiddleLeft;
+            lblBenchmarkStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1120, 827);
+            AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1280, 720);
             Controls.Add(tlpPrincipal);
-            Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(1003, 704);
+            Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            MinimumSize = new System.Drawing.Size(1024, 640);
             Name = "Form1";
             Text = "Practice: Static Memory vs. Dynamic Memory";
-            WindowState = FormWindowState.Maximized;
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
             tlpPrincipal.ResumeLayout(false);
             tlpPrincipal.PerformLayout();
             gbStaticMemory.ResumeLayout(false);
