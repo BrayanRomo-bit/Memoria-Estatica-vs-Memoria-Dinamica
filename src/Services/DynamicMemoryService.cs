@@ -1,27 +1,19 @@
 using System.Diagnostics;
+using MemoryComparison.Models;
 
-namespace Memoria_Estatica
+namespace MemoryComparison.Services
 {
-    public sealed class DynamicMemoryResult
+    public sealed class DynamicMemoryService
     {
-        public int ActiveInstances { get; init; }
-        public long HeapMemoryBytes { get; init; }
-        public long MemoryDeltaBytes { get; init; }
-        public double ElapsedMilliseconds { get; init; }
-        public string Message { get; init; } = string.Empty;
-    }
-
-    public sealed class DynamicMemoryManager
-    {
-        private readonly List<HeapObject> _references = new();
-        private HeapObject? _head;
-        private HeapObject? _tail;
+        private readonly List<HeapNode> _references = new();
+        private HeapNode? _head;
+        private HeapNode? _tail;
         private int _nextId = 1;
         private readonly Random _random = new();
 
         public int ActiveInstances => _references.Count;
 
-        public DynamicMemoryResult CreateInstances(int count, int payloadSizeBytes = 256)
+        public DynamicMemoryOperationResult CreateInstances(int count, int payloadSizeBytes = 256)
         {
             if (count < 0)
             {
@@ -44,7 +36,7 @@ namespace Memoria_Estatica
             stopwatch.Stop();
             long memoryAfter = GC.GetTotalMemory(false);
 
-            return new DynamicMemoryResult
+            return new DynamicMemoryOperationResult
             {
                 ActiveInstances = _references.Count,
                 HeapMemoryBytes = memoryAfter,
@@ -54,17 +46,17 @@ namespace Memoria_Estatica
             };
         }
 
-        public DynamicMemoryResult AddInstance(string label = "Dynamic", int payloadSizeBytes = 256)
+        public DynamicMemoryOperationResult AddInstance(string label = "Dynamic", int payloadSizeBytes = 256)
         {
             long memoryBefore = GC.GetTotalMemory(false);
             var stopwatch = Stopwatch.StartNew();
 
-            HeapObject created = AppendNodeInternal($"{label}_{_nextId}", payloadSizeBytes);
+            HeapNode created = AppendNodeInternal($"{label}_{_nextId}", payloadSizeBytes);
 
             stopwatch.Stop();
             long memoryAfter = GC.GetTotalMemory(false);
 
-            return new DynamicMemoryResult
+            return new DynamicMemoryOperationResult
             {
                 ActiveInstances = _references.Count,
                 HeapMemoryBytes = memoryAfter,
@@ -74,11 +66,11 @@ namespace Memoria_Estatica
             };
         }
 
-        public DynamicMemoryResult TestReference(int index = 0)
+        public DynamicMemoryOperationResult TestReference(int index = 0)
         {
             if (_references.Count == 0)
             {
-                return new DynamicMemoryResult
+                return new DynamicMemoryOperationResult
                 {
                     ActiveInstances = 0,
                     HeapMemoryBytes = GC.GetTotalMemory(false),
@@ -89,14 +81,14 @@ namespace Memoria_Estatica
             }
 
             int clampedIndex = Math.Clamp(index, 0, _references.Count - 1);
-            HeapObject refA = _references[clampedIndex];
-            HeapObject refB = refA;
+            HeapNode refA = _references[clampedIndex];
+            HeapNode refB = refA;
 
             int previousValue = refA.Value;
             refB.Value += 100;
             bool sameInstance = ReferenceEquals(refA, refB);
 
-            return new DynamicMemoryResult
+            return new DynamicMemoryOperationResult
             {
                 ActiveInstances = _references.Count,
                 HeapMemoryBytes = GC.GetTotalMemory(false),
@@ -106,7 +98,7 @@ namespace Memoria_Estatica
             };
         }
 
-        public DynamicMemoryResult ReleaseAllAndCollect()
+        public DynamicMemoryOperationResult ReleaseAllAndCollect()
         {
             long memoryBefore = GC.GetTotalMemory(false);
             var stopwatch = Stopwatch.StartNew();
@@ -123,7 +115,7 @@ namespace Memoria_Estatica
             stopwatch.Stop();
             long memoryAfter = GC.GetTotalMemory(true);
 
-            return new DynamicMemoryResult
+            return new DynamicMemoryOperationResult
             {
                 ActiveInstances = 0,
                 HeapMemoryBytes = memoryAfter,
@@ -156,7 +148,7 @@ namespace Memoria_Estatica
             return preview;
         }
 
-        public Task<DynamicMemoryResult> RunBenchmarkAsync(int objectCount, int payloadSizeBytes = 256)
+        public Task<DynamicMemoryOperationResult> RunBenchmarkAsync(int objectCount, int payloadSizeBytes = 256)
         {
             return Task.Run(() =>
             {
@@ -165,9 +157,9 @@ namespace Memoria_Estatica
             });
         }
 
-        private HeapObject AppendNodeInternal(string label, int payloadSizeBytes)
+        private HeapNode AppendNodeInternal(string label, int payloadSizeBytes)
         {
-            var created = new HeapObject(_nextId++, label, _random.Next(1, 1000), payloadSizeBytes);
+            var created = new HeapNode(_nextId++, label, _random.Next(1, 1000), payloadSizeBytes);
 
             if (_head == null)
             {

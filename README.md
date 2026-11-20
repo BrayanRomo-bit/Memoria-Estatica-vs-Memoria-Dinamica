@@ -20,7 +20,7 @@ Aplicación de escritorio en **C# (.NET 10 / Windows Forms)** diseñada para dem
 2. Ejecuta la aplicación desde la terminal en la raíz del repositorio:
 
 ```powershell
-dotnet run --project "Memoria Estatica\Memoria Estatica.csproj"
+dotnet run --project "src\MemoryComparison.csproj"
 ```
 
 También puedes abrir la solución `Memoria Estatica.slnx` en **Visual Studio** y presionar `F5`.
@@ -34,7 +34,7 @@ También puedes abrir la solución `Memoria Estatica.slnx` en **Visual Studio** 
 - **New size + Resize:** cambia el tamaño del arreglo en tiempo de ejecución. Si el tamaño cambia, .NET asigna un **nuevo bloque contiguo**, copia los elementos existentes y actualiza la referencia.
 
 ### 2. Panel derecho: Memoria Dinámica (Instancias en el Heap)
-- **Count + Create Instances:** crea objetos independientes en el *Heap* (cada uno con un arreglo interno de `256 bytes`) y los enlaza entre sí como una lista ligada (`Next`).
+- **Count + Create Instances:** crea objetos independientes (`HeapNode`) en el *Heap* (cada uno con un arreglo interno de `256 bytes`) y los enlaza entre sí como una lista ligada (`Next`).
 - **Add +1:** agrega una nueva instancia al final sin reasignar ni mover los objetos ya existentes.
 - **Test Heap Reference:** demuestra que dos variables (`refA` y `refB`) apuntan al **mismo objeto** en el *Heap* (modificar una altera la otra).
 - **Release and Run GC:** elimina las referencias y ejecuta el *Garbage Collector* para recuperar la memoria del *Heap*.
@@ -50,12 +50,14 @@ También puedes abrir la solución `Memoria Estatica.slnx` en **Visual Studio** 
 
 | Archivo | Descripción |
 | :--- | :--- |
-| `Memoria Estatica/StaticMemoryManager.cs` | Lógica de asignación, redimensionamiento y benchmark de arreglos contiguos. |
-| `Memoria Estatica/DynamicMemoryManager.cs` | Gestión de instancias enlazadas en el *Heap*, prueba de referencias y recolección de basura. |
-| `Memoria Estatica/HeapObject.cs` | Modelo de objeto dinámico alojado en el *Heap* con payload y referencia al siguiente nodo. |
-| `Memoria Estatica/Form1.cs` | Controlador de eventos de la interfaz gráfica y actualización de resultados. |
-| `Memoria Estatica/Form1.Designer.cs` | Diseño de controles y disposición de paneles de la ventana principal. |
-| `Memoria Estatica/Program.cs` | Punto de entrada de la aplicación (con modo oscuro nativo de Windows). |
+| `src/Models/HeapNode.cs` | Modelo de nodo dinámico alojado en el *Heap* con payload y referencia al siguiente nodo. |
+| `src/Models/StaticMemoryOperationResult.cs` | Resultado de las operaciones ejecutadas sobre memoria estática. |
+| `src/Models/DynamicMemoryOperationResult.cs` | Resultado de las operaciones ejecutadas sobre memoria dinámica en el *Heap*. |
+| `src/Services/StaticMemoryService.cs` | Lógica de asignación, redimensionamiento y benchmark de arreglos contiguos. |
+| `src/Services/DynamicMemoryService.cs` | Gestión de instancias enlazadas en el *Heap*, prueba de referencias y recolección de basura. |
+| `src/UI/MainForm.cs` | Controlador de eventos de la interfaz gráfica y actualización de resultados. |
+| `src/UI/MainForm.Designer.cs` | Diseño de controles y disposición de paneles de la ventana principal. |
+| `src/Program.cs` | Punto de entrada de la aplicación (con modo oscuro nativo de Windows). |
 | `REPORTE_EJECUCION.md` | Reporte detallado de pruebas realizadas con capturas de pantalla. |
 
 ---

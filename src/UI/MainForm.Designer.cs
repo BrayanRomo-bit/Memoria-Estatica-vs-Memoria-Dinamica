@@ -1,6 +1,6 @@
-namespace Memoria_Estatica
+﻿namespace MemoryComparison.UI
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -476,7 +476,7 @@ namespace Memoria_Estatica
             Controls.Add(tlpPrincipal);
             Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             MinimumSize = new System.Drawing.Size(1024, 640);
-            Name = "Form1";
+            Name = "MainForm";
             Text = "Practice: Static Memory vs. Dynamic Memory";
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
             tlpPrincipal.ResumeLayout(false);

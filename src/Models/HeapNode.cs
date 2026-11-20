@@ -1,18 +1,18 @@
 using System.Runtime.CompilerServices;
 
-namespace Memoria_Estatica
+namespace MemoryComparison.Models
 {
-    public sealed class HeapObject
+    public sealed class HeapNode
     {
         public int Id { get; }
         public string Label { get; set; }
         public int Value { get; set; }
         public byte[] Payload { get; }
-        public HeapObject? Next { get; set; }
+        public HeapNode? Next { get; set; }
 
         public int ReferenceCode => RuntimeHelpers.GetHashCode(this);
 
-        public HeapObject(int id, string label, int value, int payloadSizeBytes)
+        public HeapNode(int id, string label, int value, int payloadSizeBytes)
         {
             Id = id;
             Label = label;

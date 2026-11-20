@@ -1,4 +1,6 @@
-namespace Memoria_Estatica
+using MemoryComparison.UI;
+
+namespace MemoryComparison
 {
     internal static class Program
     {
@@ -7,7 +9,7 @@ namespace Memoria_Estatica
         {
             ApplicationConfiguration.Initialize();
             Application.SetColorMode(SystemColorMode.Dark);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }

@@ -1,18 +1,10 @@
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using MemoryComparison.Models;
 
-namespace Memoria_Estatica
+namespace MemoryComparison.Services
 {
-    public sealed class StaticMemoryResult
-    {
-        public int CurrentSize { get; init; }
-        public long EstimatedMemoryBytes { get; init; }
-        public double ElapsedMilliseconds { get; init; }
-        public int BlockReferenceCode { get; init; }
-        public bool BlockReallocated { get; init; }
-        public string Message { get; init; } = string.Empty;
-    } 
-    public sealed class StaticMemoryManager
+    public sealed class StaticMemoryService
     {
         private int[] _vector = Array.Empty<int>();
         private readonly Random _random = new();
@@ -22,8 +14,8 @@ namespace Memoria_Estatica
         public long EstimatedMemoryBytes => (long)_vector.Length * sizeof(int);
 
         public int CurrentReferenceCode => _vector.Length == 0 ? 0 : RuntimeHelpers.GetHashCode(_vector);
-         
-        public StaticMemoryResult GenerateVector(int size)
+
+        public StaticMemoryOperationResult GenerateVector(int size)
         {
             if (size < 0)
             {
@@ -42,7 +34,7 @@ namespace Memoria_Estatica
             stopwatch.Stop();
             int newReference = CurrentReferenceCode;
 
-            return new StaticMemoryResult
+            return new StaticMemoryOperationResult
             {
                 CurrentSize = _vector.Length,
                 EstimatedMemoryBytes = EstimatedMemoryBytes,
@@ -51,8 +43,9 @@ namespace Memoria_Estatica
                 BlockReallocated = previousReference != newReference,
                 Message = $"Vector generated with {_vector.Length:N0} integers."
             };
-        } 
-        public StaticMemoryResult ResizeVector(int newSize)
+        }
+
+        public StaticMemoryOperationResult ResizeVector(int newSize)
         {
             if (newSize < 0)
             {
@@ -73,7 +66,7 @@ namespace Memoria_Estatica
             stopwatch.Stop();
             int newReference = CurrentReferenceCode;
 
-            return new StaticMemoryResult
+            return new StaticMemoryOperationResult
             {
                 CurrentSize = _vector.Length,
                 EstimatedMemoryBytes = EstimatedMemoryBytes,
@@ -112,7 +105,7 @@ namespace Memoria_Estatica
             return preview;
         }
 
-        public Task<StaticMemoryResult> RunBenchmarkAsync(int initialSize, int resizedSize)
+        public Task<StaticMemoryOperationResult> RunBenchmarkAsync(int initialSize, int resizedSize)
         {
             return Task.Run(() =>
             {
@@ -120,11 +113,11 @@ namespace Memoria_Estatica
                 var stopwatch = Stopwatch.StartNew();
 
                 GenerateVector(initialSize);
-                StaticMemoryResult resizeResult = ResizeVector(resizedSize);
+                StaticMemoryOperationResult resizeResult = ResizeVector(resizedSize);
 
                 stopwatch.Stop();
 
-                return new StaticMemoryResult
+                return new StaticMemoryOperationResult
                 {
                     CurrentSize = resizeResult.CurrentSize,
                     EstimatedMemoryBytes = resizeResult.EstimatedMemoryBytes,
