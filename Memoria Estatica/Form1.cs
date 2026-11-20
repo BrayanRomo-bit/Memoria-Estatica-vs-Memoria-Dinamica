@@ -82,7 +82,6 @@ namespace Memoria_Estatica
 
             SetBenchmarkControlsEnabled(false);
 
-            // Clear all prior data so the comparison starts from a clean state.
             _staticManager.Clear();
             _dynamicManager.ReleaseAllAndCollect();
             lstVectorEstatico.Items.Clear();

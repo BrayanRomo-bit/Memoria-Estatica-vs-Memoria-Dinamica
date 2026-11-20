@@ -2,9 +2,6 @@ using System.Diagnostics;
 
 namespace Memoria_Estatica
 {
-    /// <summary>
-    /// Result of an operation performed on dynamic memory in the Heap.
-    /// </summary>
     public sealed class DynamicMemoryResult
     {
         public int ActiveInstances { get; init; }
@@ -14,10 +11,6 @@ namespace Memoria_Estatica
         public string Message { get; init; } = string.Empty;
     }
 
-    /// <summary>
-    /// Exclusively manages dynamic instances on the Heap using object references
-    /// and linked nodes, without depending on fixed-size arrays.
-    /// </summary>
     public sealed class DynamicMemoryManager
     {
         private readonly List<HeapObject> _references = new();
@@ -28,9 +21,6 @@ namespace Memoria_Estatica
 
         public int ActiveInstances => _references.Count;
 
-        /// <summary>
-        /// Allocates a set of instances on the Heap and links them through references.
-        /// </summary>
         public DynamicMemoryResult CreateInstances(int count, int payloadSizeBytes = 256)
         {
             if (count < 0)
@@ -64,9 +54,6 @@ namespace Memoria_Estatica
             };
         }
 
-        /// <summary>
-        /// Appends a new Heap instance by linking it to the tail node without reallocating prior objects.
-        /// </summary>
         public DynamicMemoryResult AddInstance(string label = "Dynamic", int payloadSizeBytes = 256)
         {
             long memoryBefore = GC.GetTotalMemory(false);
@@ -87,9 +74,6 @@ namespace Memoria_Estatica
             };
         }
 
-        /// <summary>
-        /// Demonstrates that two reference variables point to the same Heap instance.
-        /// </summary>
         public DynamicMemoryResult TestReference(int index = 0)
         {
             if (_references.Count == 0)
@@ -106,7 +90,7 @@ namespace Memoria_Estatica
 
             int clampedIndex = Math.Clamp(index, 0, _references.Count - 1);
             HeapObject refA = _references[clampedIndex];
-            HeapObject refB = refA; // Copies the reference, not the Heap object.
+            HeapObject refB = refA;
 
             int previousValue = refA.Value;
             refB.Value += 100;
@@ -122,9 +106,6 @@ namespace Memoria_Estatica
             };
         }
 
-        /// <summary>
-        /// Clears all root references and runs Garbage Collection to reclaim Heap memory.
-        /// </summary>
         public DynamicMemoryResult ReleaseAllAndCollect()
         {
             long memoryBefore = GC.GetTotalMemory(false);
@@ -152,9 +133,6 @@ namespace Memoria_Estatica
             };
         }
 
-        /// <summary>
-        /// Returns a bounded preview of Heap instances to keep the UI responsive.
-        /// </summary>
         public IReadOnlyList<string> GetPreview(int maxItems = 200)
         {
             if (_references.Count == 0)
@@ -178,9 +156,6 @@ namespace Memoria_Estatica
             return preview;
         }
 
-        /// <summary>
-        /// Runs an asynchronous Heap allocation benchmark after clearing prior data.
-        /// </summary>
         public Task<DynamicMemoryResult> RunBenchmarkAsync(int objectCount, int payloadSizeBytes = 256)
         {
             return Task.Run(() =>

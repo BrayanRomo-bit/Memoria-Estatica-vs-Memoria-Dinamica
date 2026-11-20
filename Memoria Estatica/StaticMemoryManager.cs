@@ -3,9 +3,6 @@ using System.Runtime.CompilerServices;
 
 namespace Memoria_Estatica
 {
-    /// <summary>
-    /// Result of an operation performed on static memory (contiguous arrays).
-    /// </summary>
     public sealed class StaticMemoryResult
     {
         public int CurrentSize { get; init; }
@@ -14,12 +11,7 @@ namespace Memoria_Estatica
         public int BlockReferenceCode { get; init; }
         public bool BlockReallocated { get; init; }
         public string Message { get; init; } = string.Empty;
-    }
-
-    /// <summary>
-    /// Exclusively manages fixed-size arrays at runtime and their resizing
-    /// through contiguous block reallocation.
-    /// </summary>
+    } 
     public sealed class StaticMemoryManager
     {
         private int[] _vector = Array.Empty<int>();
@@ -30,10 +22,7 @@ namespace Memoria_Estatica
         public long EstimatedMemoryBytes => (long)_vector.Length * sizeof(int);
 
         public int CurrentReferenceCode => _vector.Length == 0 ? 0 : RuntimeHelpers.GetHashCode(_vector);
-
-        /// <summary>
-        /// Allocates a new contiguous array of the specified size and initializes it.
-        /// </summary>
+         
         public StaticMemoryResult GenerateVector(int size)
         {
             if (size < 0)
@@ -62,12 +51,7 @@ namespace Memoria_Estatica
                 BlockReallocated = previousReference != newReference,
                 Message = $"Vector generated with {_vector.Length:N0} integers."
             };
-        }
-
-        /// <summary>
-        /// Resizes the array at runtime by allocating a new contiguous block
-        /// and copying existing elements.
-        /// </summary>
+        } 
         public StaticMemoryResult ResizeVector(int newSize)
         {
             if (newSize < 0)
@@ -100,17 +84,11 @@ namespace Memoria_Estatica
             };
         }
 
-        /// <summary>
-        /// Clears the current vector reference so prior data does not affect benchmarks.
-        /// </summary>
         public void Clear()
         {
             _vector = Array.Empty<int>();
         }
 
-        /// <summary>
-        /// Returns a bounded preview of the array to keep the UI responsive.
-        /// </summary>
         public IReadOnlyList<string> GetPreview(int maxItems = 200)
         {
             if (_vector.Length == 0)
@@ -134,9 +112,6 @@ namespace Memoria_Estatica
             return preview;
         }
 
-        /// <summary>
-        /// Runs an asynchronous generation and resize benchmark on a clean array without blocking the UI.
-        /// </summary>
         public Task<StaticMemoryResult> RunBenchmarkAsync(int initialSize, int resizedSize)
         {
             return Task.Run(() =>

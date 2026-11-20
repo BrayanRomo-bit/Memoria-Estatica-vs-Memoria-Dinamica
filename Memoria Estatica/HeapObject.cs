@@ -2,10 +2,6 @@ using System.Runtime.CompilerServices;
 
 namespace Memoria_Estatica
 {
-    /// <summary>
-    /// Represents an instance dynamically allocated on the managed Heap,
-    /// with a linked reference to another Heap object.
-    /// </summary>
     public sealed class HeapObject
     {
         public int Id { get; }
